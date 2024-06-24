@@ -1,0 +1,14 @@
+parameters:
+    mailer_default_from: '%env(MAILER_DEFAULT_FROM)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'

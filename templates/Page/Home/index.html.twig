@@ -1,0 +1,13 @@
+{% extends 'Layout/FrontOffice/base.html.twig' %}
+
+{% block body %}
+    <div class="flex justify-center text-3xl font-bold text-white">
+        {% if app.user is not null %}
+            <h1>Vous êtes connecté avec le compte {{ app.user.email }}</h1>
+            <a href="{{ path('app_authentication_logout') }}" class="text-primary hover:text-blue-800 hover:underline">Déconnexion</a>
+        {% else %}
+            Vous n'êtes pas connecté
+            <a href="{{ path('app_authentication_login') }}" class="text-primary">Connexion</a>
+        {% endif %}
+    </div>
+{% endblock body %}
